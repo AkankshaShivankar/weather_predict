@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .result-box {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 30px;
+      border-radius: 15px;
+      width: 85%;
+      max-width: 1000px;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .data {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+
+    .data:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h2>Weather in <span id="cityName">...</span></h2>
+    <div class="grid">
+      <div class="data">🌡 Temperature: <span id="temperature"></span></div>
+      <div class="data">💧 Humidity: <span id="humidity"></span></div>
+      <div class="data">⛅ Condition: <span id="condition"></span></div>
+      <div class="data">🌬 Wind Speed: <span id="windSpeed"></span></div>
+      <div class="data">🧭 Wind Direction: <span id="windDir"></span></div>
+      <div class="data">☁ Cloudiness: <span id="cloudiness"></span></div>
+    </div>
+  </div>
+
+  <script src="weather.js"></script>
+  <script>
+    displayWeatherDetails();
+  </script>
+</body>
+</html>
+
